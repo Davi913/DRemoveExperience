@@ -1,0 +1,6 @@
+# Coloque aqui nesta lista, os ID's das entidades que não irão dropar XP
+# Site para pesquisar os IDS:
+# https://minecraft-ids.grahamedgecombe.com/entities
+RemovedExperience:
+- '64'
+- '99'
