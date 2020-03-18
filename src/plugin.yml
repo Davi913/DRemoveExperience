@@ -1,5 +1,5 @@
 name: DRemoveExperience
 version: '1.0-SNAPSHOT'
 author: Davi913
-description: Remove experience from entityes on death
+description: Remove experience from entities on death
 main: com.davizin.removeexperience.RemoveEXP

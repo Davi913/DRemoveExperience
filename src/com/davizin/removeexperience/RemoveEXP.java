@@ -1,13 +1,11 @@
 package com.davizin.removeexperience;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +13,7 @@ import java.util.List;
 
 public class RemoveEXP extends JavaPlugin {
 
-    protected List<EntityType> removedEntityes = new ArrayList<>();
+    private List<EntityType> removedEntities = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -27,7 +25,7 @@ public class RemoveEXP extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new Listener() {
             @EventHandler
             public void cancelExperience(EntityDeathEvent event) {
-                if (removedEntityes.contains(event.getEntity().getType())) event.setDroppedExp(0);
+                if (removedEntities.contains(event.getEntity().getType())) event.setDroppedExp(0);
             }
         }, this);
     }
@@ -48,7 +46,7 @@ public class RemoveEXP extends JavaPlugin {
                 Bukkit.getConsoleSender().sendMessage("[DRemoveExperience] Não foi possível carregar o ID '" + line + "'");
                 return;
             }
-            removedEntityes.add(entity);
+            removedEntities.add(entity);
         });
     }
 }
